@@ -1,0 +1,15 @@
+{
+  "name": "NodeGear",
+  "version": "0.0.1",
+  "private": true,
+  "dependencies": {
+    "async": "latest",
+    "mongoose": "latest",
+    "colors": "latest",
+    "bugsnag": "latest",
+    "hiredis": "latest",
+    "redis": "latest",
+    "should": "latest",
+    "ng-models": "git+ssh://git@git.matej.me/nodegear/ng-models.git"
+  }
+}
