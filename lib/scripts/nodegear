@@ -1,0 +1,39 @@
+#!/usr/local/bin/node
+
+// Goes to /home/git/local/hooks/repo-specific/nodegear
+
+// required packages
+// redis
+// hiredis
+
+var now = Date.now();
+var channel = "git_hook_"+now;
+
+var redis = require('redis');
+
+var auth = function(client) {
+	client.auth("ahShii3ahyoo0OhJa1ooG4yoosee8me9EvahW0ae");
+}
+
+var client = redis.createClient()
+auth(client)
+
+client.on("message", function(_channel, message) {
+	if (_channel != channel) return;
+
+	var msg = JSON.parse(message);
+	console.log(msg.message);
+
+	if (msg.exit == true) {
+		process.exit(0);
+	}
+});
+
+client.publish("git_hook", JSON.stringify({
+	channel: channel,
+	user: process.env.GL_USER,
+	repo: process.env.GL_REPO,
+	repo_base: process.env.GL_REPO_BASE_ABS
+}));
+
+client.subscribe(channel);
