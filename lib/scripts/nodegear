@@ -29,7 +29,8 @@ client.on("message", function(_channel, message) {
 	}
 });
 
-client.publish("git_hook", JSON.stringify({
+client.publish("git", JSON.stringify({
+	action: 'git_hook',
 	channel: channel,
 	user: process.env.GL_USER,
 	repo: process.env.GL_REPO,
