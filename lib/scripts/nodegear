@@ -51,10 +51,6 @@ client.publish("git", JSON.stringify({
 	repo_base: process.env.GL_REPO_BASE_ABS
 }), function(err) {
 	if (err) throw err;
-
-	console.log("Submitted.")
-
-	process.exit(0);
 });
 
 client.subscribe(channel);
