@@ -16,7 +16,14 @@ var auth = function(client) {
 }
 
 var client = redis.createClient()
-auth(client)
+auth(client);
+
+function timedOut () {
+	console.log("Communication with server timed out for 5s. Aborting");
+	process.exit(0);
+}
+
+var timeout = setTimeout(timedOut, 5000);
 
 client.on("message", function(_channel, message) {
 	if (_channel != channel) return;
@@ -26,6 +33,13 @@ client.on("message", function(_channel, message) {
 
 	if (msg.exit == true) {
 		process.exit(0);
+	}
+
+	try {
+		clearTimeout(timeout);
+		setTimeout(timedOut, 5000)
+	} catch (e) {
+		console.log(e);
 	}
 });
 
@@ -37,6 +51,8 @@ client.publish("git", JSON.stringify({
 	repo_base: process.env.GL_REPO_BASE_ABS
 }), function(err) {
 	if (err) throw err;
+
+	console.log("Submitted.")
 
 	process.exit(0);
 });
