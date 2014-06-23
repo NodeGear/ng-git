@@ -10,6 +10,6 @@
     "hiredis": "latest",
     "redis": "latest",
     "should": "latest",
-    "ng-models": "git+ssh://git@git.matej.me/nodegear/ng-models.git"
+    "ng-models": "git+ssh://git@beta.castawaylabs.com/nodegear/ng-models.git"
   }
 }
