@@ -10,12 +10,13 @@ var now = Date.now();
 var channel = "git_hook_"+now;
 
 var redis = require('redis');
+var path = require('path');
 
 var auth = function(client) {
 	client.auth("ahShii3ahyoo0OhJa1ooG4yoosee8me9EvahW0ae");
 }
 
-var client = redis.createClient()
+var client = redis.createClient(null, require(path.join(process.env.HOME, 'ng_credentials.json')).redis_host);
 auth(client);
 
 function timedOut () {
