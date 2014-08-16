@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node bin/ng-git.js",
+    "start": "node bin/ng-git.js"
   },
   "dependencies": {
     "async": "latest",
