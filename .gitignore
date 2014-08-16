@@ -1,3 +1,2 @@
 node_modules/
-app.tar.gz
-credentials.js
+lib/credentials.json
