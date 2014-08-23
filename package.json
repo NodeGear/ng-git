@@ -1,5 +1,5 @@
 {
-  "name": "NodeGear",
+  "name": "NodeGear-Git-Daemon",
   "version": "0.0.1",
   "private": true,
   "scripts": {
@@ -8,11 +8,10 @@
   "dependencies": {
     "async": "latest",
     "mongoose": "latest",
-    "colors": "latest",
     "bugsnag": "latest",
     "hiredis": "latest",
     "redis": "latest",
     "should": "latest",
-    "ng-models": "git+ssh://git@beta.castawaylabs.com/nodegear/ng-models.git"
+    "ng-models": "git+ssh://git@lab.castawaylabs.com/nodegear/ng-models.git"
   }
 }
