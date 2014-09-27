@@ -1,0 +1,3 @@
+[submodule "deps/ng-models"]
+	path = deps/ng-models
+	url = git@lab.castawaylabs.com:nodegear/ng-models.git
