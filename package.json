@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "start": "node bin/ng-git.js",
-    "prepublish": "ln -s ../deps/ng-models node_modules/ng-models && cd deps/ng-models && npm install"
+    "prepublish": "rm -rf node_modules/ng-models && ln -s ../deps/ng-models node_modules/ng-models && cd deps/ng-models && npm install"
   },
   "dependencies": {
     "async": "latest",
@@ -12,6 +12,7 @@
     "bugsnag": "latest",
     "hiredis": "latest",
     "redis": "latest",
-    "should": "latest"
+    "should": "latest",
+    "lynx": "latest"
   }
 }
